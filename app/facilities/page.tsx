@@ -13,17 +13,17 @@ const FACILITIES = [
     name: 'Glooscap Arena',
     isComingSoon: false,
     description:
-      "Home ice for the Canning community. Glooscap Arena offers public skating sessions, recreational hockey leagues, and facility rentals for the whole Annapolis Valley. Whether you're lacing up for the very first time or you're a seasoned player, there's always ice time for you.",
+      "Home ice for the Canning community. Glooscap Arena offers public skating sessions, recreational hockey leagues, and facility rentals. Whether you're lacing up for the very first time or you're a seasoned player, there's always ice time for you.",
     bookingInfo:
       "To book ice time, rent the arena for a private event, or ask about league registration, reach out by phone or email. We're happy to work with teams, schools, community groups, and visitors.",
-    photo: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop',
+    photo: '/images/glooscap-arena.jpg',
   },
   {
     id: 'splash-pad',
     name: 'Community Splash Pad',
     isComingSoon: true,
     description:
-      "Opening Summer 2025 — a brand-new, free outdoor splash pad right here in Canning. Designed for families and kids of all ages, this is the perfect place to cool off and make summer memories in the Annapolis Valley. No admission, no ticket — just come and play.",
+      "Opening Summer 2025 — a brand-new, free outdoor splash pad right here in Canning. Designed for families and kids of all ages, the perfect place to cool off and make summer memories in the village. No admission, no ticket — just come and play.",
     bookingInfo: null,
     photo: 'https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=800&auto=format&fit=crop',
   },
@@ -36,7 +36,7 @@ export default function FacilitiesPage() {
       <main>
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">In the Annapolis Valley</p>
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Village of Canning</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Facilities</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
               Community spaces for everyone — from the skating rink to the brand-new splash pad.

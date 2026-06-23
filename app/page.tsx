@@ -8,16 +8,16 @@ import EventsStrip from '@/components/home/EventsStrip'
 
 const HERO_IMAGES = [
   {
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&auto=format&fit=crop',
-    alt: 'Nova Scotia Annapolis Valley countryside',
+    src: '/images/canning-valley.jpg',
+    alt: 'Autumn panorama over the Village of Canning, Nova Scotia',
   },
   {
-    src: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600&auto=format&fit=crop',
-    alt: 'Hockey rink at Glooscap Arena',
+    src: '/images/canning-main-street.jpg',
+    alt: 'Main street in Canning, Nova Scotia',
   },
   {
-    src: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=1600&auto=format&fit=crop',
-    alt: 'Children playing at the splash pad',
+    src: '/images/glooscap-arena.jpg',
+    alt: 'Glooscap Arena ice rink in Canning',
   },
 ]
 
@@ -70,15 +70,14 @@ export default function HomePage() {
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
           <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
-            Canning &amp; District · Nova Scotia
+            Nova Scotia · Canada
           </p>
           <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl">
-            Welcome to the<br />
-            <em className="italic text-teal-200">Annapolis Valley</em>
+            Welcome to<br />
+            <em className="italic text-teal-200">Canning</em>
           </h1>
           <p className="text-white/80 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-light">
-            Community recreation in the heart of Nova Scotia —
-            skating, swimming, events, and more for residents and visitors alike.
+            A small village with a big heart — skating, community events, and warm Nova Scotia hospitality.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
@@ -169,8 +168,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop"
-                alt="Glooscap Arena ice rink"
+                src="/images/glooscap-arena.jpg"
+                alt="Glooscap Arena ice rink in Canning"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -184,7 +183,7 @@ export default function HomePage() {
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Glooscap Arena</h3>
               <p className="text-stone-500 text-lg leading-relaxed mb-7">
                 Home ice for the Canning community. Whether you&apos;re lacing up for the first time or a seasoned
-                skater, Glooscap Arena offers public skating, hockey leagues, and facility rentals for the whole Valley.
+                skater, Glooscap Arena offers public skating, hockey leagues, and facility rentals for the whole community.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
@@ -211,8 +210,8 @@ export default function HomePage() {
               </span>
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Community Splash Pad</h3>
               <p className="text-stone-500 text-lg leading-relaxed mb-7">
-                Coming this summer — a free outdoor splash pad right in Canning. The perfect spot for families
-                and visitors to cool off and make summer memories in the Valley.
+                Coming this summer — a free outdoor splash pad right in the village. The perfect spot for families
+                and visitors to cool off and make summer memories in Canning.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
@@ -259,7 +258,7 @@ export default function HomePage() {
             <em className="italic font-normal text-forest-500">Nova Scotia</em>
           </h2>
           <p className="text-stone-500 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            A volunteer-driven recreation commission built by and for the people of the Annapolis Valley.
+            A volunteer-driven recreation commission built by and for the people of Canning &amp; District.
             Whether you&apos;re a local or visiting for the first time — you&apos;re welcome here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -34,7 +34,7 @@ export default function AboutPage() {
             <p className="text-stone-500 text-xl leading-relaxed">
               The Canning &amp; District Recreational Commission provides quality programs and facilities
               for every resident of Canning and the surrounding district — and for the visitors who
-              make this corner of the Annapolis Valley part of their Nova Scotia journey.
+              make this small Nova Scotia village part of their journey.
             </p>
             <p className="text-stone-400 text-lg leading-relaxed mt-5">
               We are a volunteer-driven organization rooted in a region known for its natural beauty,
@@ -50,7 +50,7 @@ export default function AboutPage() {
               <p className="text-4xl mb-3">🌿</p>
               <h3 className="font-display font-bold text-forest-700 text-xl mb-2">Natural Beauty</h3>
               <p className="text-stone-500 text-sm leading-relaxed">
-                Set in the Annapolis Valley, one of Nova Scotia&apos;s most scenic and celebrated regions.
+                Set in the Village of Canning — Nova Scotia scenery, apple orchards, and wide open skies.
               </p>
             </div>
             <div className="p-6">

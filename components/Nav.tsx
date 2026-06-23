@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
@@ -41,13 +42,14 @@ export default function Nav() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-500 ${
-              solid ? 'bg-forest-500' : 'bg-teal'
-            }`}>
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M10 2L13 8H17L13.5 12L15 18L10 15L5 18L6.5 12L3 8H7L10 2Z" fill="white"/>
-              </svg>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Canning Recreation logo"
+              width={44}
+              height={44}
+              className="w-10 h-10 object-contain shrink-0"
+              priority
+            />
             <div className="hidden sm:block">
               <p className={`font-display font-semibold text-sm leading-none transition-colors duration-500 ${
                 solid ? 'text-forest-700' : 'text-white'

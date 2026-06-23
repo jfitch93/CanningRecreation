@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -10,18 +11,20 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 bg-teal rounded-full flex items-center justify-center shrink-0">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M10 2L13 8H17L13.5 12L15 18L10 15L5 18L6.5 12L3 8H7L10 2Z" fill="white"/>
-              </svg>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Canning Recreation logo"
+              width={44}
+              height={44}
+              className="w-11 h-11 object-contain shrink-0"
+            />
             <div>
               <p className="font-display font-semibold text-white leading-none">Canning &amp; District</p>
               <p className="text-white/55 text-xs tracking-wide">Recreational Commission</p>
             </div>
           </div>
           <p className="text-white/55 text-sm leading-relaxed max-w-xs">
-            Serving the Canning &amp; District community in Nova Scotia&apos;s beautiful Annapolis Valley.
+            Serving the Village of Canning &amp; District — community recreation in the heart of Nova Scotia.
             Residents and visitors always welcome.
           </p>
         </div>
