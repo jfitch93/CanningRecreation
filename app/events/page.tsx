@@ -16,7 +16,7 @@ export default function EventsPage() {
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Community calendar</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Events</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
-              From skating nights to summer festivals — see what&apos;s on in Canning.
+              From skating nights to summer festivals. See what&apos;s on in Canning.
             </p>
           </div>
         </section>
@@ -28,7 +28,7 @@ export default function EventsPage() {
               <p className="text-4xl mb-4">📅</p>
               <p className="font-display font-semibold text-forest-700 text-2xl mb-2">Nothing scheduled yet</p>
               <p className="text-stone-400 text-sm max-w-sm mx-auto">
-                We&apos;re always planning something — check back soon, or{' '}
+                We&apos;re always planning something. Check back soon, or{' '}
                 <a href="/about#contact" className="text-teal hover:underline">get in touch</a>{' '}
                 to ask about upcoming events.
               </p>

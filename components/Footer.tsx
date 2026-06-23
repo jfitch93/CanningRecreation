@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-white/55 text-sm leading-relaxed max-w-xs">
-            Serving the Village of Canning &amp; District — community recreation in the heart of Nova Scotia.
+            Serving the Village of Canning &amp; District. Community recreation in the heart of Nova Scotia.
             Residents and visitors always welcome.
           </p>
         </div>
@@ -58,8 +58,7 @@ export default function Footer() {
             Plan Your Visit
           </h3>
           <p className="text-white/55 text-sm leading-relaxed mb-4">
-            Canning, Nova Scotia is located in the heart of the Annapolis Valley —
-            one of Canada&apos;s most scenic regions.
+            Canning is a small village in Nova Scotia, one of Canada&apos;s most scenic regions.
           </p>
           <Link
             href="/about#contact"

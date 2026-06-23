@@ -26,7 +26,7 @@ export default function EventsStrip({ events }: { events: StaticEvent[] }) {
   if (events.length === 0) {
     return (
       <p className="text-stone-400 italic py-8">
-        No upcoming events right now — check back soon!
+        No upcoming events right now. Check back soon!
       </p>
     )
   }

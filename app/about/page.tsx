@@ -33,7 +33,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-stone-500 text-xl leading-relaxed">
               The Canning &amp; District Recreational Commission provides quality programs and facilities
-              for every resident of Canning and the surrounding district — and for the visitors who
+              for every resident of Canning and the surrounding district, and for the visitors who
               make this small Nova Scotia village part of their journey.
             </p>
             <p className="text-stone-400 text-lg leading-relaxed mt-5">
@@ -50,7 +50,7 @@ export default function AboutPage() {
               <p className="text-4xl mb-3">🌿</p>
               <h3 className="font-display font-bold text-forest-700 text-xl mb-2">Natural Beauty</h3>
               <p className="text-stone-500 text-sm leading-relaxed">
-                Set in the Village of Canning — Nova Scotia scenery, apple orchards, and wide open skies.
+                Set in the Village of Canning. Nova Scotia scenery, apple orchards, and wide open skies.
               </p>
             </div>
             <div className="p-6">
@@ -77,7 +77,7 @@ export default function AboutPage() {
               <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">We&apos;d love to hear from you</p>
               <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Get in Touch</h2>
               <p className="text-stone-400 mt-3">
-                Whether you&apos;re a local, planning a visit, or just curious — say hello.
+                Whether you&apos;re a local, planning a visit, or just curious, say hello.
               </p>
             </div>
 

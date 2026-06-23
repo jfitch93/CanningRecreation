@@ -23,7 +23,7 @@ const FACILITIES = [
     name: 'Community Splash Pad',
     isComingSoon: true,
     description:
-      "Opening Summer 2025 — a brand-new, free outdoor splash pad right here in Canning. Designed for families and kids of all ages, the perfect place to cool off and make summer memories in the village. No admission, no ticket — just come and play.",
+      "Opening Summer 2025. A brand-new, free outdoor splash pad right here in Canning. Designed for families and kids of all ages, the perfect place to cool off and make summer memories in the village. No admission, no ticket. Just come and play.",
     bookingInfo: null,
     photo: 'https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=800&auto=format&fit=crop',
   },
@@ -39,7 +39,7 @@ export default function FacilitiesPage() {
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Village of Canning</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Facilities</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
-              Community spaces for everyone — from the skating rink to the brand-new splash pad.
+              Community spaces for everyone, from the skating rink to the brand-new splash pad.
             </p>
           </div>
         </section>

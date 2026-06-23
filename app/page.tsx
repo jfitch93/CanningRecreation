@@ -40,7 +40,7 @@ const QUICK_CARDS = [
     href: '/facilities',
     icon: '🏒',
     title: 'Facilities',
-    desc: 'Glooscap Arena and our brand-new Splash Pad — built for the whole community.',
+    desc: 'Glooscap Arena and our brand-new Splash Pad, built for the whole community.',
     cta: 'Explore Facilities',
   },
   {
@@ -77,7 +77,7 @@ export default function HomePage() {
             <em className="italic text-teal-200">Canning</em>
           </h1>
           <p className="text-white/80 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-light">
-            A small village with a big heart — skating, community events, and warm Nova Scotia hospitality.
+            A small village with a big heart. Skating, community events, and warm Nova Scotia hospitality.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
@@ -160,7 +160,7 @@ export default function HomePage() {
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Our facilities</p>
             <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Community Spaces</h2>
             <p className="text-stone-400 mt-3 max-w-lg mx-auto text-base">
-              Places to gather, play, and belong — right here in Canning.
+              Places to gather, play, and belong. Right here in Canning.
             </p>
           </div>
 
@@ -210,7 +210,7 @@ export default function HomePage() {
               </span>
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Community Splash Pad</h3>
               <p className="text-stone-500 text-lg leading-relaxed mb-7">
-                Coming this summer — a free outdoor splash pad right in the village. The perfect spot for families
+                Opening this summer. A free outdoor splash pad right in the village. The perfect spot for families
                 and visitors to cool off and make summer memories in Canning.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -259,7 +259,7 @@ export default function HomePage() {
           </h2>
           <p className="text-stone-500 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
             A volunteer-driven recreation commission built by and for the people of Canning &amp; District.
-            Whether you&apos;re a local or visiting for the first time — you&apos;re welcome here.
+            Whether you&apos;re a local or visiting for the first time, you&apos;re welcome here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

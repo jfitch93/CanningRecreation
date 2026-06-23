@@ -20,7 +20,7 @@ export default function ProgramsPage() {
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Join the community</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Programs</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
-              Something for everyone — from first-time skaters to competitive adults, and visitors too.
+              Something for everyone, from first-time skaters to competitive adults and visitors too.
             </p>
           </div>
         </section>
