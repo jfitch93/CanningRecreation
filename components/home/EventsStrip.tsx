@@ -2,16 +2,15 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { urlForImage } from '@/sanity/lib/image'
 
-interface Event {
-  _id: string
+export interface StaticEvent {
+  id: string
   title: string
-  slug: { current: string }
+  slug: string
   date: string
   time?: string
   location?: string
-  photo?: { asset: { _ref: string } }
+  photo?: string
 }
 
 const PLACEHOLDER = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop'
@@ -23,7 +22,7 @@ function formatDate(iso: string) {
   return { day: d.getDate(), month: MONTHS[d.getMonth()], year: d.getFullYear() }
 }
 
-export default function EventsStrip({ events }: { events: Event[] }) {
+export default function EventsStrip({ events }: { events: StaticEvent[] }) {
   if (events.length === 0) {
     return (
       <p className="text-stone-400 italic py-8">
@@ -36,14 +35,12 @@ export default function EventsStrip({ events }: { events: Event[] }) {
     <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 -mx-2 px-2">
       {events.map((ev) => {
         const { day, month, year } = formatDate(ev.date)
-        const imgSrc = ev.photo?.asset
-          ? urlForImage(ev.photo).width(600).height(400).url()
-          : PLACEHOLDER
+        const imgSrc = ev.photo ?? PLACEHOLDER
 
         return (
           <Link
-            key={ev._id}
-            href={`/events#${ev.slug?.current ?? ev._id}`}
+            key={ev.id}
+            href={`/events#${ev.slug}`}
             className="flex-none w-64 sm:w-72 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all group border border-stone-100"
           >
             <div className="relative h-40 w-full">
@@ -54,7 +51,6 @@ export default function EventsStrip({ events }: { events: Event[] }) {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="288px"
               />
-              {/* Date badge */}
               <div className="absolute top-3 left-3 bg-forest-700 text-white rounded-xl px-3 py-1.5 text-center leading-none shadow-lg">
                 <div className="font-display font-bold text-2xl">{day}</div>
                 <div className="text-xs uppercase tracking-wide opacity-80">{month} {year}</div>

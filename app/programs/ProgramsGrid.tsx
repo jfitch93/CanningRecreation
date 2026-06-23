@@ -3,16 +3,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { urlForImage } from '@/sanity/lib/image'
 
 type Category = 'all' | 'youth' | 'adult' | 'drop-in' | 'seasonal'
 
-interface Program {
-  _id: string
+export interface StaticProgram {
+  id: string
   title: string
-  slug: { current: string }
+  slug: string
   category: string
-  photo?: { asset: { _ref: string } }
+  photo?: string
   ageRange?: string
   schedule?: string
   registrationUrl?: string
@@ -28,14 +27,13 @@ const FILTERS: { label: string; value: Category }[] = [
   { label: 'Seasonal', value: 'seasonal' },
 ]
 
-export default function ProgramsGrid({ programs }: { programs: Program[] }) {
+export default function ProgramsGrid({ programs }: { programs: StaticProgram[] }) {
   const [active, setActive] = useState<Category>('all')
 
   const filtered = active === 'all' ? programs : programs.filter((p) => p.category === active)
 
   return (
     <div>
-      {/* Filter bar */}
       <div className="flex flex-wrap gap-2 mb-10">
         {FILTERS.map(({ label, value }) => (
           <button
@@ -61,13 +59,11 @@ export default function ProgramsGrid({ programs }: { programs: Program[] }) {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((prog) => {
-            const imgSrc = prog.photo?.asset
-              ? urlForImage(prog.photo).width(600).height(400).url()
-              : PLACEHOLDER
+            const imgSrc = prog.photo ?? PLACEHOLDER
 
             return (
               <div
-                key={prog._id}
+                key={prog.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 border border-stone-100"
               >
                 <div className="relative h-48">

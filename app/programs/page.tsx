@@ -1,27 +1,20 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getPrograms, getSiteSettings } from '@/sanity/lib/queries'
-import { urlForImage } from '@/sanity/lib/image'
 import ProgramsGrid from './ProgramsGrid'
-
-export const revalidate = 60
+import type { StaticProgram } from './ProgramsGrid'
 
 export const metadata = {
   title: 'Programs | Canning Recreation',
   description: 'Youth, adult, drop-in, and seasonal recreation programs for the Canning & District community.',
 }
 
-export default async function ProgramsPage() {
-  const [programs, settings] = await Promise.all([
-    getPrograms().catch(() => []),
-    getSiteSettings().catch(() => null),
-  ])
+const PROGRAMS: StaticProgram[] = []
 
+export default function ProgramsPage() {
   return (
     <>
       <Nav />
       <main>
-        {/* Page hero */}
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
             <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-2">Canning Recreation</p>
@@ -32,21 +25,13 @@ export default async function ProgramsPage() {
           </div>
         </section>
 
-        {/* Filterable grid */}
         <section className="bg-cream py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <ProgramsGrid programs={programs} />
+            <ProgramsGrid programs={PROGRAMS} />
           </div>
         </section>
       </main>
-      <Footer
-        orgName={settings?.orgName}
-        address={settings?.address}
-        phone={settings?.phone}
-        email={settings?.email}
-        facebookUrl={settings?.facebookUrl}
-        foundingYear={settings?.foundingYear}
-      />
+      <Footer />
     </>
   )
 }
