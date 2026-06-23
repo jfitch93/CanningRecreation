@@ -19,7 +19,7 @@ export default function AboutPage() {
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Community &amp; history</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">About Us</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
-              A volunteer-run recreation commission proudly serving Canning &amp; District, Nova Scotia.
+              Volunteer-run and community-powered. We keep Canning active.
             </p>
           </div>
         </section>
@@ -29,16 +29,15 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-3">Our Mission</p>
             <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-6">
-              Recreation for Everyone
+              Recreation for the Whole Community
             </h2>
             <p className="text-stone-500 text-xl leading-relaxed">
-              The Canning &amp; District Recreational Commission provides quality programs and facilities
-              for every resident of Canning and the surrounding district, and for the visitors who
-              make this small Nova Scotia village part of their journey.
+              The Canning &amp; District Recreational Commission runs the programs, facilities, and events
+              that keep our community active. From youth hockey to adult fitness, from the rink to the splash pad,
+              we are here for everyone.
             </p>
             <p className="text-stone-400 text-lg leading-relaxed mt-5">
-              We are a volunteer-driven organization rooted in a region known for its natural beauty,
-              warm communities, and rich history. Everyone is welcome here.
+              Entirely volunteer-driven, rooted in Canning, and proud of it. Come get involved.
             </p>
           </div>
         </section>

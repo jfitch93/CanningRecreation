@@ -22,29 +22,29 @@ const QUICK_CARDS = [
     href: '/programs',
     icon: '🏃',
     title: 'Programs',
-    desc: 'Youth leagues, adult fitness, drop-in hockey, and seasonal offerings for all ages.',
+    desc: 'Youth leagues, adult fitness, drop-in hockey, and more. Something for every age and skill level.',
     cta: 'See Programs',
   },
   {
     href: '/events',
     icon: '📅',
     title: 'Events',
-    desc: 'Tournaments, family days, and community gatherings all year long in Canning.',
+    desc: 'Tournaments, family days, and community nights. See what we have coming up.',
     cta: 'View Events',
   },
   {
     href: '/facilities',
     icon: '🏒',
     title: 'Facilities',
-    desc: 'Glooscap Arena and our brand-new Splash Pad, built for the whole community.',
+    desc: 'Glooscap Arena for skating and hockey, plus our brand-new community Splash Pad.',
     cta: 'Explore Facilities',
   },
   {
     href: '/about#contact',
     icon: '📬',
-    title: 'Visit Us',
-    desc: "Planning a visit or have questions about programs and bookings? We'd love to help.",
-    cta: 'Get in Touch',
+    title: 'Book with Us',
+    desc: 'Need ice time, a facility rental, or program info? Get in touch and we will sort it out.',
+    cta: 'Contact Us',
   },
 ]
 
@@ -66,14 +66,14 @@ export default function HomePage() {
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
           <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
-            Nova Scotia · Canada
+            Canning &amp; District · Nova Scotia
           </p>
           <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.55)' }}>
-            Welcome to<br />
-            <em className="italic text-teal-200">Canning</em>
+            Play Here.<br />
+            <em className="italic text-teal-200">Belong Here.</em>
           </h1>
           <p className="text-white/80 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-light">
-            A small village with a big heart. Skating, community events, and warm Nova Scotia hospitality.
+            Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
@@ -247,15 +247,15 @@ export default function HomePage() {
             <div className="w-10 h-px bg-teal" />
           </div>
           <p className="text-teal font-semibold text-xs uppercase tracking-[0.25em] mb-4">
-            Proudly serving our community
+            Volunteer-run. Community-powered.
           </p>
           <h2 className="font-display font-bold text-forest-700 text-5xl sm:text-6xl leading-tight mb-6">
-            Canning &amp; District<br />
-            <em className="italic font-normal text-forest-500">Nova Scotia</em>
+            Built for Everyone<br />
+            <em className="italic font-normal text-forest-500">in Canning &amp; District</em>
           </h2>
           <p className="text-stone-500 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            A volunteer-driven recreation commission built by and for the people of Canning &amp; District.
-            Whether you&apos;re a local or visiting for the first time, you&apos;re welcome here.
+            We are a volunteer-driven recreation commission keeping Canning active, connected, and having fun.
+            On the ice, at the splash pad, or at your next community event, everyone is welcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

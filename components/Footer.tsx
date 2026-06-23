@@ -24,8 +24,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-white/55 text-sm leading-relaxed max-w-xs">
-            Serving the Village of Canning &amp; District. Community recreation in the heart of Nova Scotia.
-            Residents and visitors always welcome.
+            Keeping Canning &amp; District active, connected, and having fun. Volunteer-run and proud of it.
           </p>
         </div>
 
