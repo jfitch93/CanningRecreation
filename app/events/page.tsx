@@ -22,10 +22,6 @@ function formatFullDate(iso: string) {
   return `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
 }
 
-function isPast(iso: string) {
-  return new Date(iso + 'T23:59:59') < new Date()
-}
-
 export default async function EventsPage() {
   const [events, settings] = await Promise.all([
     getEvents().catch(() => []),
