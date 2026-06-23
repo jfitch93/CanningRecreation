@@ -65,14 +65,14 @@ export default function HomePage() {
         {/* Warm overlay — less harsh than pure black */}
         <div
           className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(to bottom, rgba(22,17,8,0.42) 0%, rgba(22,17,8,0.12) 42%, rgba(22,17,8,0.68) 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(22,17,8,0.55) 0%, rgba(22,17,8,0.48) 50%, rgba(22,17,8,0.72) 100%)' }}
         />
 
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
           <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
             Nova Scotia · Canada
           </p>
-          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl">
+          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.55)' }}>
             Welcome to<br />
             <em className="italic text-teal-200">Canning</em>
           </h1>
