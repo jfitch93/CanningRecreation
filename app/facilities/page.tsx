@@ -16,7 +16,7 @@ const FACILITIES = [
       "Home ice for the Canning community. Glooscap Arena offers public skating sessions, recreational hockey leagues, and facility rentals. Whether you're lacing up for the very first time or you're a seasoned player, there's always ice time for you.",
     bookingInfo:
       "To book ice time, rent the arena for a private event, or ask about league registration, reach out by phone or email. We're happy to work with teams, schools, community groups, and visitors.",
-    photo: '/images/glooscap-arena.jpg',
+    photo: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop',
   },
   {
     id: 'splash-pad',
