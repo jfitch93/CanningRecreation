@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Oswald } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -8,19 +8,20 @@ const inter = Inter({
   display: 'swap',
 })
 
-const oswald = Oswald({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-oswald',
+  variable: '--font-playfair',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
   title: 'Canning & District Recreational Commission',
-  description: 'Your community. Your recreation. Serving Canning & District in Nova Scotia\'s Annapolis Valley.',
+  description: 'Recreation, community events, and natural beauty in the heart of Nova Scotia\'s Annapolis Valley.',
   openGraph: {
     title: 'Canning & District Recreational Commission',
-    description: 'Your community. Your recreation.',
+    description: 'Recreation and community in the Annapolis Valley, Nova Scotia.',
     locale: 'en_CA',
     type: 'website',
   },
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   )

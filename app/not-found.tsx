@@ -8,7 +8,7 @@ export default function NotFound() {
       <main className="min-h-screen bg-cream flex flex-col items-center justify-center text-center px-4 pt-20">
         <p className="font-display font-bold text-teal text-8xl mb-4">404</p>
         <h1 className="font-display font-bold text-forest-700 text-4xl mb-4">Page Not Found</h1>
-        <p className="text-stone-500 text-lg max-w-md mb-8">
+        <p className="text-stone-400 text-lg max-w-md mb-8">
           Looks like this page took a wrong turn somewhere in the Annapolis Valley.
         </p>
         <Link

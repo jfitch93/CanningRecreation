@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'About | Canning Recreation',
-  description: 'About the Canning & District Recreational Commission — our mission, our team, and how to reach us.',
+  description: 'About the Canning & District Recreational Commission — our story, our mission, and how to reach us.',
 }
 
 const CONTACT_EMAIL = 'info@canningrecreation.ca'
@@ -16,36 +16,69 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-2">Who we are</p>
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Community &amp; history</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">About Us</h1>
+            <p className="mt-4 text-white/65 text-xl max-w-xl">
+              A volunteer-run recreation commission proudly serving Canning &amp; District, Nova Scotia.
+            </p>
           </div>
         </section>
 
         {/* Mission */}
         <section className="bg-white py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-3">Our Mission</p>
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-3">Our Mission</p>
             <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-6">
-              Recreation for Every Resident
+              Recreation for Everyone
             </h2>
-            <p className="text-stone-600 text-xl leading-relaxed">
-              The Canning &amp; District Recreational Commission exists to provide quality recreational
-              programs and facilities for every resident of Canning and the surrounding district.
-              We believe that access to sport, play, and community spaces makes our community healthier,
-              happier, and stronger.
+            <p className="text-stone-500 text-xl leading-relaxed">
+              The Canning &amp; District Recreational Commission provides quality programs and facilities
+              for every resident of Canning and the surrounding district — and for the visitors who
+              make this corner of the Annapolis Valley part of their Nova Scotia journey.
             </p>
-            <p className="text-stone-500 text-lg leading-relaxed mt-4">
-              We are a volunteer-driven organization proudly serving the Annapolis Valley.
+            <p className="text-stone-400 text-lg leading-relaxed mt-5">
+              We are a volunteer-driven organization rooted in a region known for its natural beauty,
+              warm communities, and rich history. Everyone is welcome here.
             </p>
           </div>
         </section>
 
+        {/* Valley callout */}
+        <section className="bg-linen py-16 px-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <p className="text-4xl mb-3">🌿</p>
+              <h3 className="font-display font-bold text-forest-700 text-xl mb-2">Natural Beauty</h3>
+              <p className="text-stone-500 text-sm leading-relaxed">
+                Set in the Annapolis Valley, one of Nova Scotia&apos;s most scenic and celebrated regions.
+              </p>
+            </div>
+            <div className="p-6">
+              <p className="text-4xl mb-3">🤝</p>
+              <h3 className="font-display font-bold text-forest-700 text-xl mb-2">Volunteer-Run</h3>
+              <p className="text-stone-500 text-sm leading-relaxed">
+                Entirely driven by community volunteers who care deeply about Canning &amp; District.
+              </p>
+            </div>
+            <div className="p-6">
+              <p className="text-4xl mb-3">🏒</p>
+              <h3 className="font-display font-bold text-forest-700 text-xl mb-2">For All Ages</h3>
+              <p className="text-stone-500 text-sm leading-relaxed">
+                Programs and facilities designed for kids, families, adults, and visitors of all backgrounds.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
-        <section id="contact" className="bg-cream py-20 px-4 scroll-mt-20">
+        <section id="contact" className="bg-white py-20 px-4 scroll-mt-20">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
-              <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-2">We&apos;d love to hear from you</p>
-              <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Contact Us</h2>
+              <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">We&apos;d love to hear from you</p>
+              <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Get in Touch</h2>
+              <p className="text-stone-400 mt-3">
+                Whether you&apos;re a local, planning a visit, or just curious — say hello.
+              </p>
             </div>
 
             <form
@@ -56,7 +89,7 @@ export default function AboutPage() {
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                  <label htmlFor="name" className="block text-sm font-semibold text-stone-600 mb-1.5">
                     Your Name
                   </label>
                   <input
@@ -64,12 +97,12 @@ export default function AboutPage() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent text-sm"
                     placeholder="Jane Smith"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal/50 text-sm bg-cream"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                  <label htmlFor="email" className="block text-sm font-semibold text-stone-600 mb-1.5">
                     Email Address
                   </label>
                   <input
@@ -77,13 +110,13 @@ export default function AboutPage() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent text-sm"
                     placeholder="jane@example.com"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal/50 text-sm bg-cream"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                <label htmlFor="subject" className="block text-sm font-semibold text-stone-600 mb-1.5">
                   Subject
                 </label>
                 <input
@@ -91,12 +124,12 @@ export default function AboutPage() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent text-sm"
                   placeholder="Rink rental inquiry"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal/50 text-sm bg-cream"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                <label htmlFor="message" className="block text-sm font-semibold text-stone-600 mb-1.5">
                   Message
                 </label>
                 <textarea
@@ -104,18 +137,18 @@ export default function AboutPage() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent text-sm resize-none"
                   placeholder="Tell us how we can help..."
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal/50 text-sm resize-none bg-cream"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-xl transition-colors text-lg"
+                className="w-full py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-xl transition-colors text-base"
               >
                 Send Message
               </button>
               <p className="text-center text-xs text-stone-400">
-                This will open your email client. Alternatively, find us on Facebook.
+                This opens your email client. You can also find us on Facebook.
               </p>
             </form>
           </div>

@@ -8,16 +8,16 @@ import EventsStrip from '@/components/home/EventsStrip'
 
 const HERO_IMAGES = [
   {
+    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&auto=format&fit=crop',
+    alt: 'Nova Scotia Annapolis Valley countryside',
+  },
+  {
     src: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600&auto=format&fit=crop',
     alt: 'Hockey rink at Glooscap Arena',
   },
   {
     src: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=1600&auto=format&fit=crop',
     alt: 'Children playing at the splash pad',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&auto=format&fit=crop',
-    alt: 'Nova Scotia Annapolis Valley countryside',
   },
 ]
 
@@ -26,33 +26,29 @@ const QUICK_CARDS = [
     href: '/programs',
     icon: '🏃',
     title: 'Programs',
-    desc: 'Youth leagues, adult fitness, drop-in hockey, and more seasonal offerings for all ages.',
+    desc: 'Youth leagues, adult fitness, drop-in hockey, and seasonal offerings for all ages.',
     cta: 'See Programs',
-    colour: 'bg-forest-700',
   },
   {
     href: '/events',
     icon: '📅',
     title: 'Events',
-    desc: 'Community tournaments, family days, and special events happening in Canning all year long.',
+    desc: 'Tournaments, family days, and community gatherings all year long in Canning.',
     cta: 'View Events',
-    colour: 'bg-teal',
   },
   {
     href: '/facilities',
     icon: '🏒',
     title: 'Facilities',
-    desc: "Glooscap Arena, the new Splash Pad, outdoor fields — world-class community spaces.",
+    desc: 'Glooscap Arena and our brand-new Splash Pad — built for the whole community.',
     cta: 'Explore Facilities',
-    colour: 'bg-forest-600',
   },
   {
     href: '/about#contact',
     icon: '📬',
-    title: 'Contact',
-    desc: "Questions? Want to book a facility or register a team? We're always happy to help.",
+    title: 'Visit Us',
+    desc: "Planning a visit or have questions about programs and bookings? We'd love to help.",
     cta: 'Get in Touch',
-    colour: 'bg-stone-700',
   },
 ]
 
@@ -62,61 +58,72 @@ export default function HomePage() {
       <AnnouncementBanner announcements={[]} />
       <Nav />
 
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section className="relative h-screen min-h-[600px] max-h-[900px]">
         <HeroCarousel images={HERO_IMAGES} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10" />
+
+        {/* Warm overlay — less harsh than pure black */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{ background: 'linear-gradient(to bottom, rgba(22,17,8,0.42) 0%, rgba(22,17,8,0.12) 42%, rgba(22,17,8,0.68) 100%)' }}
+        />
+
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
-          <p className="text-teal font-display font-semibold tracking-[0.2em] uppercase text-sm md:text-base mb-3">
-            Canning &amp; District
+          <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
+            Canning &amp; District · Nova Scotia
           </p>
-          <h1 className="font-display font-bold text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-none mb-6">
-            RECREATION
+          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl">
+            Welcome to the<br />
+            <em className="italic text-teal-200">Annapolis Valley</em>
           </h1>
-          <p className="text-white/90 text-xl sm:text-2xl font-light max-w-xl mb-10">
-            Your community. Your recreation.
+          <p className="text-white/80 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-light">
+            Community recreation in the heart of Nova Scotia —
+            skating, swimming, events, and more for residents and visitors alike.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/programs"
-              className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-lg transition-all hover:scale-105"
+              className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-base transition-all hover:scale-105 shadow-lg"
             >
               Explore Programs
             </Link>
             <Link
               href="/events"
-              className="px-8 py-4 bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold rounded-full text-lg border border-white/30 transition-all hover:scale-105"
+              className="px-8 py-4 bg-white/12 hover:bg-white/22 backdrop-blur-sm text-white font-semibold rounded-full text-base border border-white/35 transition-all hover:scale-105"
             >
               What&apos;s On
             </Link>
           </div>
         </div>
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-          <svg width="24" height="24" fill="none" stroke="white" strokeWidth="2" opacity="0.6">
-            <path d="M7 10l5 5 5-5"/>
+          <svg width="22" height="22" fill="none" stroke="white" strokeWidth="1.5" opacity="0.45">
+            <path d="M6 9l5 5 5-5"/>
           </svg>
         </div>
       </section>
 
-      {/* Quick-access cards */}
+      {/* ── Quick-access cards ── */}
       <section className="bg-cream py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {QUICK_CARDS.map(({ href, icon, title, desc, cta, colour }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {QUICK_CARDS.map(({ href, icon, title, desc, cta }) => (
               <Link
                 key={href}
                 href={href}
-                className={`${colour} text-white rounded-2xl p-7 flex flex-col gap-4 group hover:opacity-90 transition-all hover:-translate-y-1 hover:shadow-xl`}
+                className="bg-white rounded-2xl p-7 flex flex-col gap-4 group hover:shadow-lg hover:-translate-y-1 transition-all border border-stone-100"
               >
-                <span className="text-4xl">{icon}</span>
-                <div>
-                  <h2 className="font-display font-bold text-2xl mb-1">{title}</h2>
-                  <p className="text-white/75 text-sm leading-relaxed">{desc}</p>
+                <div className="w-12 h-12 bg-forest-50 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                  {icon}
                 </div>
-                <span className="mt-auto text-sm font-semibold text-white/80 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                <div>
+                  <h2 className="font-display font-bold text-forest-700 text-xl mb-1.5">{title}</h2>
+                  <p className="text-stone-400 text-sm leading-relaxed">{desc}</p>
+                </div>
+                <span className="mt-auto text-sm font-semibold text-teal flex items-center gap-1.5 group-hover:gap-3 transition-all">
                   {cta}
-                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 8h8M8 4l4 4-4 4"/>
+                  <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 7.5h9M8 3l4.5 4.5L8 12"/>
                   </svg>
                 </span>
               </Link>
@@ -125,42 +132,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Upcoming Events strip */}
-      <section className="bg-white py-16 px-4">
+      {/* ── Upcoming Events ── */}
+      <section className="bg-linen py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-1">What&apos;s happening</p>
+              <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-1.5">Community calendar</p>
               <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Upcoming Events</h2>
             </div>
             <Link
               href="/events"
-              className="hidden sm:inline-flex items-center gap-2 text-forest-700 font-semibold hover:text-teal transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 text-forest-600 text-sm font-semibold hover:text-teal transition-colors"
             >
               All Events
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 9h8M9 5l4 4-4 4"/>
+              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
               </svg>
             </Link>
           </div>
           <EventsStrip events={[]} />
-          <Link href="/events" className="mt-8 sm:hidden flex items-center justify-center gap-2 text-forest-700 font-semibold">
-            See all events →
-          </Link>
         </div>
       </section>
 
-      {/* Facility spotlight */}
-      <section className="bg-cream py-20 px-4">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center mb-12">
-            <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-1">Our facilities</p>
+      {/* ── Facility spotlight ── */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-7xl mx-auto space-y-20">
+          <div className="text-center">
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Our facilities</p>
             <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Community Spaces</h2>
+            <p className="text-stone-400 mt-3 max-w-lg mx-auto text-base">
+              Places to gather, play, and belong — right here in Canning.
+            </p>
           </div>
 
           {/* Glooscap Arena */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
                 src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop"
                 alt="Glooscap Arena ice rink"
@@ -170,20 +177,26 @@ export default function HomePage() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="inline-flex items-center gap-2 text-teal font-semibold text-sm uppercase tracking-widest mb-3">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><circle cx="7" cy="7" r="7"/></svg>
+              <span className="inline-flex items-center gap-2 text-forest-500 font-semibold text-xs uppercase tracking-widest mb-3">
+                <span className="w-2 h-2 rounded-full bg-forest-400 inline-block" />
                 Now Open
               </span>
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Glooscap Arena</h3>
-              <p className="text-stone-600 text-lg leading-relaxed mb-6">
+              <p className="text-stone-500 text-lg leading-relaxed mb-7">
                 Home ice for the Canning community. Whether you&apos;re lacing up for the first time or a seasoned
                 skater, Glooscap Arena offers public skating, hockey leagues, and facility rentals for the whole Valley.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/facilities" className="px-6 py-3 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full transition-colors text-center">
-                  View Schedule &amp; Info
+                <Link
+                  href="/facilities"
+                  className="px-6 py-3 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full transition-colors text-sm text-center"
+                >
+                  Schedule &amp; Info
                 </Link>
-                <Link href="/about#contact" className="px-6 py-3 border-2 border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-white font-semibold rounded-full transition-colors text-center">
+                <Link
+                  href="/about#contact"
+                  className="px-6 py-3 border border-forest-200 text-forest-700 hover:bg-forest-50 font-semibold rounded-full transition-colors text-sm text-center"
+                >
                   Book the Rink
                 </Link>
               </div>
@@ -191,26 +204,32 @@ export default function HomePage() {
           </div>
 
           {/* Splash Pad */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="flex flex-col justify-center md:order-first order-last">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-urgent text-white text-xs font-bold rounded-full uppercase tracking-wide mb-4 w-fit">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-teal/10 text-teal text-xs font-bold rounded-full uppercase tracking-wide mb-4 w-fit border border-teal/20">
                 🎉 Opening Summer 2025
               </span>
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Community Splash Pad</h3>
-              <p className="text-stone-600 text-lg leading-relaxed mb-6">
-                Brand new and coming this summer — a free outdoor splash pad right here in Canning. Cool off, play,
-                and make memories. The perfect spot for families and kids all summer long.
+              <p className="text-stone-500 text-lg leading-relaxed mb-7">
+                Coming this summer — a free outdoor splash pad right in Canning. The perfect spot for families
+                and visitors to cool off and make summer memories in the Valley.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/facilities" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full transition-colors text-center">
+                <Link
+                  href="/facilities"
+                  className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full transition-colors text-sm text-center"
+                >
                   Learn More
                 </Link>
-                <Link href="/events" className="px-6 py-3 border-2 border-teal text-teal hover:bg-teal hover:text-white font-semibold rounded-full transition-colors text-center">
+                <Link
+                  href="/events"
+                  className="px-6 py-3 border border-teal/25 text-teal hover:bg-teal/8 font-semibold rounded-full transition-colors text-sm text-center"
+                >
                   Opening Events
                 </Link>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl md:order-last order-first">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl md:order-last order-first">
               <Image
                 src="https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=800&auto=format&fit=crop"
                 alt="Children playing at a splash pad"
@@ -218,7 +237,7 @@ export default function HomePage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute top-4 right-4 px-3 py-1.5 bg-urgent text-white text-xs font-bold rounded-full shadow-lg uppercase tracking-wide">
+              <div className="absolute top-4 right-4 px-3 py-1.5 bg-teal text-white text-xs font-bold rounded-full shadow-lg uppercase tracking-wide">
                 Coming Soon
               </div>
             </div>
@@ -226,27 +245,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Community callout */}
-      <section className="relative bg-forest-700 overflow-hidden py-24 px-4">
-        <div className="absolute inset-0 bg-grain opacity-30 pointer-events-none" />
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(14,165,233,0.15) 0%, transparent 70%)' }} />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
-            <div className="w-1 h-12 bg-teal rounded-full" />
+      {/* ── Community callout ── warm linen, not dark green ── */}
+      <section className="bg-linen py-24 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="flex justify-center mb-8">
+            <div className="w-10 h-px bg-teal" />
           </div>
-          <h2 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-none mb-6">
-            PROUDLY SERVING<br />
-            <span className="text-teal">CANNING &amp; DISTRICT</span>
-          </h2>
-          <p className="text-white/75 text-lg max-w-xl mx-auto mt-6 leading-relaxed">
-            We&apos;re a community organization run by and for the people of the Annapolis Valley.
-            Every program, every event, every facility — built around you.
+          <p className="text-teal font-semibold text-xs uppercase tracking-[0.25em] mb-4">
+            Proudly serving our community
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/about" className="px-8 py-4 bg-white text-forest-700 hover:bg-cream font-semibold rounded-full text-lg transition-all hover:scale-105">
+          <h2 className="font-display font-bold text-forest-700 text-5xl sm:text-6xl leading-tight mb-6">
+            Canning &amp; District<br />
+            <em className="italic font-normal text-forest-500">Nova Scotia</em>
+          </h2>
+          <p className="text-stone-500 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            A volunteer-driven recreation commission built by and for the people of the Annapolis Valley.
+            Whether you&apos;re a local or visiting for the first time — you&apos;re welcome here.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/about"
+              className="px-8 py-4 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full text-base transition-all hover:scale-105"
+            >
               Our Story
             </Link>
-            <Link href="/programs" className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-lg transition-all hover:scale-105">
+            <Link
+              href="/programs"
+              className="px-8 py-4 bg-white hover:bg-stone-50 text-forest-700 font-semibold rounded-full text-base border border-stone-200 transition-all hover:scale-105"
+            >
               Get Involved
             </Link>
           </div>

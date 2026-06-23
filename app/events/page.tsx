@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Events | Canning Recreation',
-  description: 'Upcoming community events hosted by Canning & District Recreational Commission.',
+  description: 'Upcoming community events hosted by Canning & District Recreational Commission in the Annapolis Valley.',
 }
 
 export default function EventsPage() {
@@ -13,10 +13,10 @@ export default function EventsPage() {
       <main>
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-sm uppercase tracking-widest mb-2">Community Calendar</p>
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Community calendar</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Events</h1>
-            <p className="mt-4 text-white/70 text-xl max-w-xl">
-              Tournaments, family days, opening ceremonies — see what&apos;s on in Canning.
+            <p className="mt-4 text-white/65 text-xl max-w-xl">
+              From skating nights to summer festivals — see what&apos;s on in Canning.
             </p>
           </div>
         </section>
@@ -24,10 +24,14 @@ export default function EventsPage() {
         <section className="bg-cream py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-display font-bold text-forest-700 text-3xl mb-8">Upcoming Events</h2>
-            <div className="bg-white rounded-2xl p-12 text-center text-stone-400 border border-stone-100">
-              <p className="text-5xl mb-4">📅</p>
-              <p className="text-xl font-semibold">No upcoming events</p>
-              <p className="mt-2 text-sm">Check back soon — we&apos;re always planning something!</p>
+            <div className="bg-white rounded-2xl p-14 text-center border border-stone-100">
+              <p className="text-4xl mb-4">📅</p>
+              <p className="font-display font-semibold text-forest-700 text-2xl mb-2">Nothing scheduled yet</p>
+              <p className="text-stone-400 text-sm max-w-sm mx-auto">
+                We&apos;re always planning something — check back soon, or{' '}
+                <a href="/about#contact" className="text-teal hover:underline">get in touch</a>{' '}
+                to ask about upcoming events.
+              </p>
             </div>
           </div>
         </section>

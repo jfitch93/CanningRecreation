@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-forest: #1B4332;
-  --color-cream: #F8F5F0;
-  --color-teal: #0EA5E9;
+  --color-forest: #4A6741;
+  --color-cream:  #FAF7F0;
+  --color-honey:  #C4873A;
   --color-urgent: #DC2626;
+  --color-charcoal: #2A2018;
 }
 
 html {
@@ -15,14 +16,8 @@ html {
 
 body {
   background-color: var(--color-cream);
-  color: #1a1a1a;
+  color: var(--color-charcoal);
 }
 
-/* Hide scrollbar on the events strip while keeping scroll behaviour */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
