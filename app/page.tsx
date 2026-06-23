@@ -16,7 +16,7 @@ const HERO_IMAGES = [
     alt: 'Main street in Canning, Nova Scotia',
   },
   {
-    src: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600&auto=format&fit=crop',
+    src: '/images/glooscap-arena.jpg',
     alt: 'Glooscap Arena ice rink in Canning',
   },
 ]
