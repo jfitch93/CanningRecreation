@@ -15,10 +15,6 @@ const HERO_IMAGES = [
     src: '/images/canning-main-street.jpg',
     alt: 'Main street in Canning, Nova Scotia',
   },
-  {
-    src: '/images/glooscap-arena.jpg',
-    alt: 'Glooscap Arena ice rink in Canning',
-  },
 ]
 
 const QUICK_CARDS = [
@@ -168,7 +164,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
-                src="/images/glooscap-arena.jpg"
+                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop"
                 alt="Glooscap Arena ice rink in Canning"
                 fill
                 className="object-cover"
