@@ -12,7 +12,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="Canning Recreation logo"
               width={44}
               height={44}

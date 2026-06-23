@@ -43,7 +43,7 @@ export default function Nav() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="Canning Recreation logo"
               width={44}
               height={44}
