@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import EventsStrip from '@/components/home/EventsStrip'
-import GalleryGrid from '@/components/home/GalleryGrid'
 import QuickCards from '@/components/home/QuickCards'
 import FadeIn from '@/components/ui/FadeIn'
 
@@ -59,38 +58,67 @@ export default function HomePage() {
     <>
       <Nav />
 
-      {/* ── Hero text ── */}
-      <section className="bg-forest-700 pt-36 pb-14 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+      {/* ── Hero — Lookoff photo faded behind, gallery grid on the right ── */}
+      <section className="relative bg-forest-700 overflow-hidden min-h-[90vh] flex items-center">
+        {/* Faded background photo */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/canning-valley.jpg"
+            alt="Canning, Nova Scotia"
+            fill
+            priority
+            className="object-cover opacity-20"
+            sizes="100vw"
+          />
+          {/* Gradient so right side is darker behind the gallery */}
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-700/60 via-forest-700/20 to-forest-700/50" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 py-36 items-center">
+          {/* Left — text + CTAs */}
           <div>
-            <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-4">
+            <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-5">
               Canning &amp; District · Nova Scotia
             </p>
-            <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight">
+            <h1
+              className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-6"
+              style={{ textShadow: '0 2px 24px rgba(0,0,0,0.4)' }}
+            >
               Play Here.<br />
               <em className="italic text-teal-200">Belong Here.</em>
             </h1>
-          </div>
-          <div className="flex flex-col sm:items-end gap-3 shrink-0">
-            <p className="text-white/60 text-sm max-w-xs sm:text-right leading-relaxed">
-              Canning Recreation runs the rink, the programs, and the events that keep our community active.
+            <p className="text-white/70 text-lg max-w-md mb-10 leading-relaxed">
+              Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
             </p>
-            <div className="flex gap-3">
-              <Link href="/programs" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
+            <div className="flex flex-wrap gap-3">
+              <Link href="/programs" className="px-7 py-3.5 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
                 Explore Programs
               </Link>
-              <Link href="/events" className="px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
+              <Link href="/events" className="px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
                 What&apos;s On
               </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Gallery — replaces the hero photo ── */}
-      <section className="bg-forest-700 pb-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <GalleryGrid photos={GALLERY_PHOTOS} />
+          {/* Right — gallery grid */}
+          <div className="hidden lg:block">
+            <div className="columns-2 gap-3">
+              {GALLERY_PHOTOS.map((photo, i) => (
+                <div key={i} className="break-inside-avoid mb-3">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={400}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                      sizes="25vw"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
