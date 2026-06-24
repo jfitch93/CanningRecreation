@@ -10,7 +10,6 @@ const links = [
   { href: '/programs',   label: 'Programs' },
   { href: '/events',     label: 'Events' },
   { href: '/facilities', label: 'Facilities' },
-  { href: '/gallery',    label: 'Gallery' },
   { href: '/about',      label: 'About' },
 ]
 

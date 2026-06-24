@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import EventsStrip from '@/components/home/EventsStrip'
-import GalleryGrid from '@/app/gallery/GalleryGrid'
+import GalleryGrid from '@/components/home/GalleryGrid'
 
 const QUICK_CARDS = [
   {
@@ -55,43 +55,38 @@ export default function HomePage() {
     <>
       <Nav />
 
-      {/* ── Hero ── static, not a slideshow */}
-      <section className="relative pt-40 pb-24 px-4 bg-forest-700 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/canning-valley.jpg"
-            alt="Canning, Nova Scotia"
-            fill
-            priority
-            className="object-cover opacity-30"
-            sizes="100vw"
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
-            Canning &amp; District · Nova Scotia
-          </p>
-          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-6 max-w-3xl">
-            Play Here.<br />
-            <em className="italic text-teal-200">Belong Here.</em>
-          </h1>
-          <p className="text-white/75 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed font-light">
-            Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/programs"
-              className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-base transition-all hover:scale-105 shadow-lg w-fit"
-            >
-              Explore Programs
-            </Link>
-            <Link
-              href="/events"
-              className="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-base border border-white/30 transition-all hover:scale-105 w-fit"
-            >
-              What&apos;s On
-            </Link>
+      {/* ── Hero text ── */}
+      <section className="bg-forest-700 pt-36 pb-14 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-4">
+              Canning &amp; District · Nova Scotia
+            </p>
+            <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight">
+              Play Here.<br />
+              <em className="italic text-teal-200">Belong Here.</em>
+            </h1>
           </div>
+          <div className="flex flex-col sm:items-end gap-3 shrink-0">
+            <p className="text-white/60 text-sm max-w-xs sm:text-right leading-relaxed">
+              Canning Recreation runs the rink, the programs, and the events that keep our community active.
+            </p>
+            <div className="flex gap-3">
+              <Link href="/programs" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
+                Explore Programs
+              </Link>
+              <Link href="/events" className="px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
+                What&apos;s On
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Gallery — replaces the hero photo ── */}
+      <section className="bg-forest-700 pb-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <GalleryGrid photos={GALLERY_PHOTOS} />
         </div>
       </section>
 
@@ -120,36 +115,6 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Gallery ── */}
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Our community</p>
-              <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Photo Gallery</h2>
-            </div>
-            <Link
-              href="/gallery"
-              className="hidden sm:inline-flex items-center gap-1.5 text-forest-600 text-sm font-semibold hover:text-teal transition-colors"
-            >
-              See All Photos
-              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
-              </svg>
-            </Link>
-          </div>
-          <GalleryGrid photos={GALLERY_PHOTOS} />
-          <div className="mt-8 sm:hidden text-center">
-            <Link href="/gallery" className="inline-flex items-center gap-1.5 text-forest-600 text-sm font-semibold hover:text-teal transition-colors">
-              See All Photos
-              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
-              </svg>
-            </Link>
           </div>
         </div>
       </section>
