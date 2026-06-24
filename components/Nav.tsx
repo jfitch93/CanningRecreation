@@ -32,7 +32,7 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 ${isHome ? 'transition-all duration-300' : ''} ${
           solid
             ? 'bg-white/96 backdrop-blur-sm shadow-sm border-b border-stone-100'
             : 'bg-transparent'
