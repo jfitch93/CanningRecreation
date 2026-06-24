@@ -46,11 +46,11 @@ const QUICK_CARDS = [
 // Placeholder photos — swap these out when real photos arrive from Jennie
 const GALLERY_PHOTOS = [
   { src: 'https://images.unsplash.com/photo-1515703407324-5f753afd8be8?w=600&h=400&fit=crop&q=80', alt: 'Hockey at Glooscap Arena' },
-  { src: 'https://images.unsplash.com/photo-1551958219-acbc595d5b58?w=600&h=400&fit=crop&q=80', alt: 'Youth sports program' },
-  { src: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=400&fit=crop&q=80', alt: 'Public skating at the arena' },
-  { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&q=80', alt: 'Community event' },
-  { src: 'https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=600&h=400&fit=crop&q=80', alt: 'Splash pad fun' },
-  { src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=400&fit=crop&q=80', alt: 'Outdoor recreation' },
+  { src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80', alt: 'Running and athletics' },
+  { src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=400&fit=crop&q=80', alt: 'Basketball program' },
+  { src: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&h=400&fit=crop&q=80', alt: 'Cycling and outdoor activities' },
+  { src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop&q=80', alt: 'Swimming program' },
+  { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&q=80', alt: 'Community gathering' },
 ]
 
 export default function HomePage() {
