@@ -138,17 +138,9 @@ export default function HomePage() {
 
           {/* Col 3 — Facebook feed, same fixed height */}
           <div className="hidden lg:flex flex-col gap-3 h-[430px]">
-            <a
-              href={FACEBOOK_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-xs shadow-sm shrink-0 w-fit"
-            >
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-              </svg>
-              Follow Canning Recreation
-            </a>
+            <p className="text-white/50 text-xs tracking-wide shrink-0">
+              Scroll for recent updates from Facebook
+            </p>
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex-1 min-h-0">
               <iframe
                 src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=400&height=390&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
