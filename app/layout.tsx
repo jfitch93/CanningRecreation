@@ -30,10 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <head>
-        {/* Runs before paint — sets data-season with zero flash */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var m=new Date().getMonth();document.documentElement.setAttribute('data-season',m===11||m<=1?'winter':m<=4?'spring':m<=8?'summer':'fall')})()` }} />
-      </head>
+
       <body className="font-sans antialiased">{children}</body>
     </html>
   )
