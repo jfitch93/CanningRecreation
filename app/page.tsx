@@ -7,6 +7,8 @@ import GalleryGrid from '@/components/home/GalleryGrid'
 import QuickCards from '@/components/home/QuickCards'
 import FadeIn from '@/components/ui/FadeIn'
 
+const FACEBOOK_PAGE_URL = 'https://facebook.com/canningrecreation'
+
 const QUICK_CARDS = [
   {
     href: '/programs',
@@ -118,6 +120,47 @@ export default function HomePage() {
             </Link>
           </FadeIn>
           <EventsStrip events={[]} />
+        </div>
+      </section>
+
+      {/* ── Facebook feed ── */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <FadeIn>
+            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-3">Stay connected</p>
+            <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-5">
+              Latest from<br />
+              <em className="italic font-normal text-forest-500">Facebook</em>
+            </h2>
+            <p className="text-stone-500 text-lg leading-relaxed mb-8">
+              We post schedule updates, event announcements, ice cancellations, and community news on Facebook. Follow us to stay in the loop.
+            </p>
+            <a
+              href={FACEBOOK_PAGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-sm shadow-sm"
+            >
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+              Follow on Facebook
+            </a>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-stone-100">
+              <iframe
+                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+                width="100%"
+                height="600"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
