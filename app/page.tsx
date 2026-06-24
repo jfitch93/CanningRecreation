@@ -2,20 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import AnnouncementBanner from '@/components/AnnouncementBanner'
-import HeroCarousel from '@/components/home/HeroCarousel'
 import EventsStrip from '@/components/home/EventsStrip'
-
-const HERO_IMAGES = [
-  {
-    src: '/images/canning-valley.jpg',
-    alt: 'Autumn panorama over the Village of Canning, Nova Scotia',
-  },
-  {
-    src: '/images/canning-main-street.jpg',
-    alt: 'Main street in Canning, Nova Scotia',
-  },
-]
+import GalleryGrid from '@/app/gallery/GalleryGrid'
 
 const QUICK_CARDS = [
   {
@@ -52,56 +40,58 @@ const QUICK_CARDS = [
   },
 ]
 
+// Add more photos here as they come in from Jennie
+const GALLERY_PHOTOS = [
+  { src: '/images/canning-valley.jpg',      alt: 'Autumn view over Canning, Nova Scotia' },
+  { src: '/images/canning-main-street.jpg', alt: 'Main street in Canning' },
+  { src: '/images/canning-valley.jpg',      alt: 'Canning countryside in fall' },
+  { src: '/images/canning-main-street.jpg', alt: 'Downtown Canning' },
+  { src: '/images/canning-valley.jpg',      alt: 'Nova Scotia landscape' },
+  { src: '/images/canning-main-street.jpg', alt: 'Canning village' },
+]
+
 export default function HomePage() {
   return (
     <>
-      {/* Add announcements here — colour: 'yellow' for general, 'red' for urgent */}
-      <AnnouncementBanner announcements={[
-        { _id: '1', text: 'Splash Pad opening Summer 2025. Stay tuned for the official date!', colour: 'yellow' },
-      ]} />
       <Nav />
 
-      {/* ── Hero ── */}
-      <section className="relative h-screen min-h-[600px] max-h-[900px]">
-        <HeroCarousel images={HERO_IMAGES} />
-
-        {/* Warm overlay — less harsh than pure black */}
-        <div
-          className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(to bottom, rgba(22,17,8,0.55) 0%, rgba(22,17,8,0.48) 50%, rgba(22,17,8,0.72) 100%)' }}
-        />
-
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+      {/* ── Hero ── static, not a slideshow */}
+      <section className="relative pt-40 pb-24 px-4 bg-forest-700 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/canning-valley.jpg"
+            alt="Canning, Nova Scotia"
+            fill
+            priority
+            className="object-cover opacity-30"
+            sizes="100vw"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-5">
             Canning &amp; District · Nova Scotia
           </p>
-          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-5 max-w-3xl" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.55)' }}>
+          <h1 className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-6 max-w-3xl">
             Play Here.<br />
             <em className="italic text-teal-200">Belong Here.</em>
           </h1>
-          <p className="text-white/80 text-lg sm:text-xl max-w-lg mb-10 leading-relaxed font-light">
+          <p className="text-white/75 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed font-light">
             Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/programs"
-              className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-base transition-all hover:scale-105 shadow-lg"
+              className="px-8 py-4 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-base transition-all hover:scale-105 shadow-lg w-fit"
             >
               Explore Programs
             </Link>
             <Link
               href="/events"
-              className="px-8 py-4 bg-white/12 hover:bg-white/22 backdrop-blur-sm text-white font-semibold rounded-full text-base border border-white/35 transition-all hover:scale-105"
+              className="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-base border border-white/30 transition-all hover:scale-105 w-fit"
             >
               What&apos;s On
             </Link>
           </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-          <svg width="22" height="22" fill="none" stroke="white" strokeWidth="1.5" opacity="0.45">
-            <path d="M6 9l5 5 5-5"/>
-          </svg>
         </div>
       </section>
 
@@ -130,6 +120,36 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Gallery ── */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Our community</p>
+              <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Photo Gallery</h2>
+            </div>
+            <Link
+              href="/gallery"
+              className="hidden sm:inline-flex items-center gap-1.5 text-forest-600 text-sm font-semibold hover:text-teal transition-colors"
+            >
+              See All Photos
+              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
+              </svg>
+            </Link>
+          </div>
+          <GalleryGrid photos={GALLERY_PHOTOS} />
+          <div className="mt-8 sm:hidden text-center">
+            <Link href="/gallery" className="inline-flex items-center gap-1.5 text-forest-600 text-sm font-semibold hover:text-teal transition-colors">
+              See All Photos
+              <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -167,7 +187,6 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Glooscap Arena */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
@@ -189,23 +208,16 @@ export default function HomePage() {
                 skater, Glooscap Arena offers public skating, hockey leagues, and facility rentals for the whole community.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/facilities"
-                  className="px-6 py-3 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full transition-colors text-sm text-center"
-                >
+                <Link href="/facilities" className="px-6 py-3 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full transition-colors text-sm text-center">
                   Schedule &amp; Info
                 </Link>
-                <Link
-                  href="/about#contact"
-                  className="px-6 py-3 border border-forest-200 text-forest-700 hover:bg-forest-50 font-semibold rounded-full transition-colors text-sm text-center"
-                >
+                <Link href="/about#contact" className="px-6 py-3 border border-forest-200 text-forest-700 hover:bg-forest-50 font-semibold rounded-full transition-colors text-sm text-center">
                   Book the Rink
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Splash Pad */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="flex flex-col justify-center md:order-first order-last">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-teal/10 text-teal text-xs font-bold rounded-full uppercase tracking-wide mb-4 w-fit border border-teal/20">
@@ -214,20 +226,11 @@ export default function HomePage() {
               <h3 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-4">Community Splash Pad</h3>
               <p className="text-stone-500 text-lg leading-relaxed mb-7">
                 Opening this summer. A free outdoor splash pad right in the village. The perfect spot for families
-                and visitors to cool off and make summer memories in Canning.
+                to cool off and make summer memories in Canning.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/facilities"
-                  className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full transition-colors text-sm text-center"
-                >
+                <Link href="/facilities" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full transition-colors text-sm text-center">
                   Learn More
-                </Link>
-                <Link
-                  href="/events"
-                  className="px-6 py-3 border border-teal/25 text-teal hover:bg-teal/8 font-semibold rounded-full transition-colors text-sm text-center"
-                >
-                  Opening Events
                 </Link>
               </div>
             </div>
@@ -247,7 +250,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Community callout ── warm linen, not dark green ── */}
+      {/* ── Community callout ── */}
       <section className="bg-linen py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-8">
@@ -265,16 +268,10 @@ export default function HomePage() {
             On the ice, at the splash pad, or at your next community event, everyone is welcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/about"
-              className="px-8 py-4 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full text-base transition-all hover:scale-105"
-            >
+            <Link href="/about" className="px-8 py-4 bg-forest-700 hover:bg-forest-600 text-white font-semibold rounded-full text-base transition-all hover:scale-105">
               Our Story
             </Link>
-            <Link
-              href="/programs"
-              className="px-8 py-4 bg-white hover:bg-stone-50 text-forest-700 font-semibold rounded-full text-base border border-stone-200 transition-all hover:scale-105"
-            >
+            <Link href="/programs" className="px-8 py-4 bg-white hover:bg-stone-50 text-forest-700 font-semibold rounded-full text-base border border-stone-200 transition-all hover:scale-105">
               Get Involved
             </Link>
           </div>
