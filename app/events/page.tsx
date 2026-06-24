@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 // Paste your Facebook page URL here e.g. https://www.facebook.com/CanningRecreation
-const FACEBOOK_PAGE_URL = ''
+const FACEBOOK_PAGE_URL = 'https://facebook.com/canningrecreation'
 
 export default function EventsPage() {
   return (
