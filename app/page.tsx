@@ -12,7 +12,7 @@ const QUICK_CARDS = [
     title: 'Programs',
     desc: 'Youth leagues, adult fitness, drop-in hockey, and more. Something for every age and skill level.',
     cta: 'See Programs',
-    accent: 'bg-orange-100 text-orange-600',
+    accent: 'bg-logo-orange/10 text-logo-orange',
   },
   {
     href: '/events',
@@ -20,7 +20,7 @@ const QUICK_CARDS = [
     title: 'Events',
     desc: 'Tournaments, family days, and community nights. See what we have coming up.',
     cta: 'View Events',
-    accent: 'bg-teal/10 text-teal',
+    accent: 'bg-logo-yellow/15 text-logo-yellow',
   },
   {
     href: '/facilities',
@@ -28,7 +28,7 @@ const QUICK_CARDS = [
     title: 'Facilities',
     desc: 'Glooscap Arena for skating and hockey, plus our brand-new community Splash Pad.',
     cta: 'Explore Facilities',
-    accent: 'bg-forest-100 text-forest-600',
+    accent: 'bg-logo-green/10 text-logo-green',
   },
   {
     href: '/about#contact',
@@ -36,7 +36,7 @@ const QUICK_CARDS = [
     title: 'Book with Us',
     desc: 'Need ice time, a facility rental, or program info? Get in touch and we will sort it out.',
     cta: 'Contact Us',
-    accent: 'bg-blue-100 text-blue-600',
+    accent: 'bg-logo-blue/10 text-logo-blue',
   },
 ]
 

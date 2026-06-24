@@ -43,6 +43,11 @@ const config: Config = {
         charcoal: '#2A2018',
         // Alert red — unchanged
         urgent: '#DC2626',
+        // Logo colours — used as subtle accents on icons, tags, and highlights
+        'logo-orange': '#E8471C',
+        'logo-yellow': '#F5A623',
+        'logo-green':  '#56AC38',
+        'logo-blue':   '#2196F3',
       },
       fontFamily: {
         sans:    ['var(--font-inter)', 'system-ui', 'sans-serif'],

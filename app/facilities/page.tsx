@@ -36,7 +36,7 @@ export default function FacilitiesPage() {
       <main>
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Village of Canning</p>
+            <p className="text-logo-green font-semibold text-xs uppercase tracking-widest mb-2">Village of Canning</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Facilities</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
               Community spaces for everyone, from the skating rink to the brand-new splash pad.

@@ -16,7 +16,7 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Community &amp; history</p>
+            <p className="text-logo-blue font-semibold text-xs uppercase tracking-widest mb-2">Community &amp; history</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">About Us</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
               Volunteer-run and community-powered. We keep Canning active.

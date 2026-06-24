@@ -17,7 +17,7 @@ export default function ProgramsPage() {
       <main>
         <section className="bg-forest-700 pt-32 pb-16 px-4 text-white">
           <div className="max-w-7xl mx-auto">
-            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Join the community</p>
+            <p className="text-logo-orange font-semibold text-xs uppercase tracking-widest mb-2">Join the community</p>
             <h1 className="font-display font-bold text-5xl md:text-7xl">Programs</h1>
             <p className="mt-4 text-white/65 text-xl max-w-xl">
               Something for everyone, from first-time skaters to competitive adults and visitors too.
