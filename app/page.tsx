@@ -4,6 +4,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import EventsStrip from '@/components/home/EventsStrip'
 import GalleryGrid from '@/components/home/GalleryGrid'
+import QuickCards from '@/components/home/QuickCards'
+import FadeIn from '@/components/ui/FadeIn'
 
 const QUICK_CARDS = [
   {
@@ -93,36 +95,14 @@ export default function HomePage() {
       {/* ── Quick-access cards ── */}
       <section className="bg-cream py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {QUICK_CARDS.map(({ href, icon, title, desc, cta, accent }) => (
-              <Link
-                key={href}
-                href={href}
-                className="bg-white rounded-2xl p-7 flex flex-col gap-4 group hover:shadow-xl hover:-translate-y-1.5 transition-all border border-stone-100"
-              >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 ${accent}`}>
-                  {icon}
-                </div>
-                <div>
-                  <h2 className="font-display font-bold text-forest-700 text-xl mb-1.5">{title}</h2>
-                  <p className="text-stone-400 text-sm leading-relaxed">{desc}</p>
-                </div>
-                <span className="mt-auto text-sm font-semibold text-teal flex items-center gap-1.5 group-hover:gap-3 transition-all">
-                  {cta}
-                  <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 7.5h9M8 3l4.5 4.5L8 12"/>
-                  </svg>
-                </span>
-              </Link>
-            ))}
-          </div>
+          <QuickCards cards={QUICK_CARDS} />
         </div>
       </section>
 
       {/* ── Upcoming Events ── */}
       <section className="bg-linen py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-8">
+          <FadeIn className="flex items-end justify-between mb-8">
             <div>
               <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-1.5">Community calendar</p>
               <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Upcoming Events</h2>
@@ -136,7 +116,7 @@ export default function HomePage() {
                 <path d="M4 7.5h8M8 3l4.5 4.5L8 12"/>
               </svg>
             </Link>
-          </div>
+          </FadeIn>
           <EventsStrip events={[]} />
         </div>
       </section>
@@ -144,15 +124,15 @@ export default function HomePage() {
       {/* ── Facility spotlight ── */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-7xl mx-auto space-y-20">
-          <div className="text-center">
+          <FadeIn className="text-center">
             <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-2">Our facilities</p>
             <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl">Community Spaces</h2>
             <p className="text-stone-400 mt-3 max-w-lg mx-auto text-base">
               Places to gather, play, and belong. Right here in Canning.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <FadeIn className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
                 src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&auto=format&fit=crop"
@@ -181,9 +161,9 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <FadeIn delay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="flex flex-col justify-center md:order-first order-last">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-teal/10 text-teal text-xs font-bold rounded-full uppercase tracking-wide mb-4 w-fit border border-teal/20">
                 🎉 Opening Summer 2025
@@ -211,13 +191,14 @@ export default function HomePage() {
                 Coming Soon
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Community callout ── */}
       <section className="bg-linen py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
           <div className="flex justify-center mb-8">
             <div className="w-10 h-px bg-teal" />
           </div>
@@ -240,6 +221,7 @@ export default function HomePage() {
               Get Involved
             </Link>
           </div>
+          </FadeIn>
         </div>
       </section>
 

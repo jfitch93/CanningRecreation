@@ -8,7 +8,17 @@
   --color-honey:  #C4873A;
   --color-urgent: #DC2626;
   --color-charcoal: #2A2018;
+  /* Season-aware accent — raw R G B so Tailwind opacity modifiers work */
+  --color-accent: 196 135 58; /* summer default: warm honey */
 }
+/* Winter: hockey season — ice blue */
+[data-season="winter"] { --color-accent: 74 144 217; }
+/* Spring: fresh start — logo green */
+[data-season="spring"] { --color-accent: 86 172 56; }
+/* Summer: splash pad — warm honey (same as default) */
+[data-season="summer"] { --color-accent: 196 135 58; }
+/* Fall: harvest — deep amber */
+[data-season="fall"]   { --color-accent: 196 111 42; }
 
 html {
   scroll-behavior: smooth;

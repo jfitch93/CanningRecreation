@@ -23,9 +23,9 @@ const config: Config = {
           800: '#20301C',
           900: '#121D10',
         },
-        // Warm honey/amber — replaces the sporty bright teal
+        // Season-aware accent — shifts automatically via CSS variable
         teal: {
-          DEFAULT: '#C4873A',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
           50:  '#FAF0E4',
           100: '#F2DCBC',
           200: '#E6C388',
