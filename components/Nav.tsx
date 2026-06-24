@@ -27,16 +27,16 @@ export default function Nav() {
   useEffect(() => { setOpen(false) }, [pathname])
 
   const isHome = pathname === '/'
-  const solid = scrolled || !isHome
+  const transparent = isHome && !scrolled
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 ${isHome ? 'transition-all duration-300' : ''} ${
-          solid
-            ? 'bg-white/96 backdrop-blur-sm shadow-sm border-b border-stone-100'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 ${
+          transparent
+            ? 'bg-transparent'
+            : 'bg-white shadow-sm border-b border-stone-100'
+        } ${isHome ? 'transition-all duration-300' : ''}`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
 
@@ -52,12 +52,12 @@ export default function Nav() {
             />
             <div>
               <p className={`font-display font-semibold text-sm leading-none ${
-                solid ? 'text-forest-700' : 'text-white'
+                transparent ? 'text-white' : 'text-forest-700'
               }`}>
                 Canning &amp; District
               </p>
               <p className={`text-xs tracking-wide ${
-                solid ? 'text-stone-400' : 'text-white/65'
+                transparent ? 'text-white/65' : 'text-stone-500'
               }`}>
                 Recreational Commission
               </p>
@@ -72,10 +72,10 @@ export default function Nav() {
                 href={href}
                 className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   pathname === href
-                    ? solid
+                    ? !transparent
                       ? 'text-forest-700 bg-forest-50'
                       : 'text-white bg-white/15'
-                    : solid
+                    : !transparent
                       ? 'text-stone-500 hover:text-forest-700 hover:bg-stone-50'
                       : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
@@ -96,7 +96,7 @@ export default function Nav() {
             onClick={() => setOpen(v => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              solid ? 'text-charcoal hover:bg-stone-100' : 'text-white hover:bg-white/10'
+              !transparent ? 'text-charcoal hover:bg-stone-100' : 'text-white hover:bg-white/10'
             }`}
           >
             {open ? (
