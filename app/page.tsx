@@ -73,9 +73,9 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-forest-700/55 via-forest-700/10 to-forest-700/55" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-3 gap-10 pt-36 pb-16 items-start">
-          {/* Col 1 — text + CTAs */}
-          <div className="flex flex-col justify-center lg:pt-4">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-3 gap-8 pt-32 pb-12 items-center">
+          {/* Col 1 — text + CTAs (self-centres relative to the fixed-height cols beside it) */}
+          <div>
             <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-5">
               Canning &amp; District · Nova Scotia
             </p>
@@ -99,50 +99,39 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Col 2 — gallery grid */}
-          <div className="hidden lg:block">
-            <div className="columns-2 gap-3">
-              {GALLERY_PHOTOS.map((photo, i) => (
-                <div key={i} className="break-inside-avoid mb-3">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-cover"
-                      sizes="20vw"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Col 2 — photo grid, fixed height to match FB col */}
+          <div className="hidden lg:grid grid-cols-2 gap-2 h-[430px]">
+            {GALLERY_PHOTOS.map((photo, i) => (
+              <div key={i} className="relative overflow-hidden rounded-xl shadow-xl">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="15vw"
+                />
+              </div>
+            ))}
           </div>
 
-          {/* Col 3 — Facebook feed */}
-          <div className="hidden lg:flex flex-col gap-4">
-            <div>
-              <p className="text-teal-200 font-sans font-medium tracking-[0.2em] uppercase text-xs mb-1">Stay connected</p>
-              <p className="text-white/80 text-sm leading-relaxed mb-3">
-                Schedule updates, ice cancellations, events, and community news — all on Facebook.
-              </p>
-              <a
-                href={FACEBOOK_PAGE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-xs shadow-sm"
-              >
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-                </svg>
-                Follow on Facebook
-              </a>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+          {/* Col 3 — Facebook feed, same fixed height */}
+          <div className="hidden lg:flex flex-col gap-3 h-[430px]">
+            <a
+              href={FACEBOOK_PAGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-xs shadow-sm shrink-0 w-fit"
+            >
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+              Follow Canning Recreation
+            </a>
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex-1 min-h-0">
               <iframe
-                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=400&height=480&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=400&height=390&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
                 width="100%"
-                height="480"
+                height="100%"
                 style={{ border: 'none', overflow: 'hidden' }}
                 scrolling="no"
                 frameBorder="0"
