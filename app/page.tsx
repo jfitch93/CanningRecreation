@@ -58,8 +58,8 @@ export default function HomePage() {
     <>
       <Nav />
 
-      {/* ── Hero — Lookoff photo faded behind, gallery grid on the right ── */}
-      <section className="relative bg-forest-700 overflow-hidden min-h-[90vh] flex items-center">
+      {/* ── Hero — 3-col: text | gallery | facebook ── */}
+      <section className="relative bg-forest-700 overflow-hidden">
         {/* Faded background photo */}
         <div className="absolute inset-0">
           <Image
@@ -70,37 +70,36 @@ export default function HomePage() {
             className="object-cover opacity-20"
             sizes="100vw"
           />
-          {/* Gradient so right side is darker behind the gallery */}
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-700/60 via-forest-700/20 to-forest-700/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-700/55 via-forest-700/10 to-forest-700/55" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 py-36 items-center">
-          {/* Left — text + CTAs */}
-          <div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-3 gap-10 pt-36 pb-16 items-start">
+          {/* Col 1 — text + CTAs */}
+          <div className="flex flex-col justify-center lg:pt-4">
             <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-5">
               Canning &amp; District · Nova Scotia
             </p>
             <h1
-              className="font-display font-bold text-white text-5xl sm:text-6xl md:text-7xl leading-tight mb-6"
+              className="font-display font-bold text-white text-5xl sm:text-6xl leading-tight mb-5"
               style={{ textShadow: '0 2px 24px rgba(0,0,0,0.4)' }}
             >
               Play Here.<br />
               <em className="italic text-teal-200">Belong Here.</em>
             </h1>
-            <p className="text-white/70 text-lg max-w-md mb-10 leading-relaxed">
+            <p className="text-white/65 text-base leading-relaxed mb-8">
               Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/programs" className="px-7 py-3.5 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
+              <Link href="/programs" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
                 Explore Programs
               </Link>
-              <Link href="/events" className="px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
+              <Link href="/events" className="px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
                 What&apos;s On
               </Link>
             </div>
           </div>
 
-          {/* Right — gallery grid */}
+          {/* Col 2 — gallery grid */}
           <div className="hidden lg:block">
             <div className="columns-2 gap-3">
               {GALLERY_PHOTOS.map((photo, i) => (
@@ -112,11 +111,44 @@ export default function HomePage() {
                       width={400}
                       height={300}
                       className="w-full h-auto object-cover"
-                      sizes="25vw"
+                      sizes="20vw"
                     />
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Col 3 — Facebook feed */}
+          <div className="hidden lg:flex flex-col gap-4">
+            <div>
+              <p className="text-teal-200 font-sans font-medium tracking-[0.2em] uppercase text-xs mb-1">Stay connected</p>
+              <p className="text-white/80 text-sm leading-relaxed mb-3">
+                Schedule updates, ice cancellations, events, and community news — all on Facebook.
+              </p>
+              <a
+                href={FACEBOOK_PAGE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-xs shadow-sm"
+              >
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                </svg>
+                Follow on Facebook
+              </a>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <iframe
+                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=400&height=480&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+                width="100%"
+                height="480"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              />
             </div>
           </div>
         </div>
@@ -148,47 +180,6 @@ export default function HomePage() {
             </Link>
           </FadeIn>
           <EventsStrip events={[]} />
-        </div>
-      </section>
-
-      {/* ── Facebook feed ── */}
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <FadeIn>
-            <p className="text-teal font-semibold text-xs uppercase tracking-widest mb-3">Stay connected</p>
-            <h2 className="font-display font-bold text-forest-700 text-4xl md:text-5xl mb-5">
-              Latest from<br />
-              <em className="italic font-normal text-forest-500">Facebook</em>
-            </h2>
-            <p className="text-stone-500 text-lg leading-relaxed mb-8">
-              We post schedule updates, event announcements, ice cancellations, and community news on Facebook. Follow us to stay in the loop.
-            </p>
-            <a
-              href={FACEBOOK_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-sm shadow-sm"
-            >
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-              </svg>
-              Follow on Facebook
-            </a>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-stone-100">
-              <iframe
-                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
-                width="100%"
-                height="600"
-                style={{ border: 'none', overflow: 'hidden' }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
