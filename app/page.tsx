@@ -24,6 +24,7 @@ const QUICK_CARDS = [
     title: 'Programs',
     desc: 'Youth leagues, adult fitness, drop-in hockey, and more. Something for every age and skill level.',
     cta: 'See Programs',
+    accent: 'bg-orange-100 text-orange-600',
   },
   {
     href: '/events',
@@ -31,6 +32,7 @@ const QUICK_CARDS = [
     title: 'Events',
     desc: 'Tournaments, family days, and community nights. See what we have coming up.',
     cta: 'View Events',
+    accent: 'bg-teal/10 text-teal',
   },
   {
     href: '/facilities',
@@ -38,6 +40,7 @@ const QUICK_CARDS = [
     title: 'Facilities',
     desc: 'Glooscap Arena for skating and hockey, plus our brand-new community Splash Pad.',
     cta: 'Explore Facilities',
+    accent: 'bg-forest-100 text-forest-600',
   },
   {
     href: '/about#contact',
@@ -45,13 +48,17 @@ const QUICK_CARDS = [
     title: 'Book with Us',
     desc: 'Need ice time, a facility rental, or program info? Get in touch and we will sort it out.',
     cta: 'Contact Us',
+    accent: 'bg-blue-100 text-blue-600',
   },
 ]
 
 export default function HomePage() {
   return (
     <>
-      <AnnouncementBanner announcements={[]} />
+      {/* Add announcements here — colour: 'yellow' for general, 'red' for urgent */}
+      <AnnouncementBanner announcements={[
+        { _id: '1', text: 'Splash Pad opening Summer 2025. Stay tuned for the official date!', colour: 'yellow' },
+      ]} />
       <Nav />
 
       {/* ── Hero ── */}
@@ -102,13 +109,13 @@ export default function HomePage() {
       <section className="bg-cream py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {QUICK_CARDS.map(({ href, icon, title, desc, cta }) => (
+            {QUICK_CARDS.map(({ href, icon, title, desc, cta, accent }) => (
               <Link
                 key={href}
                 href={href}
-                className="bg-white rounded-2xl p-7 flex flex-col gap-4 group hover:shadow-lg hover:-translate-y-1 transition-all border border-stone-100"
+                className="bg-white rounded-2xl p-7 flex flex-col gap-4 group hover:shadow-xl hover:-translate-y-1.5 transition-all border border-stone-100"
               >
-                <div className="w-12 h-12 bg-forest-50 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 ${accent}`}>
                   {icon}
                 </div>
                 <div>
