@@ -10,6 +10,7 @@
   --color-charcoal: #2A2018;
   /* Fixed accent — forest green (raw R G B for Tailwind opacity modifiers) */
   --color-accent: 74 103 65;
+}
 
 html {
   scroll-behavior: smooth;
