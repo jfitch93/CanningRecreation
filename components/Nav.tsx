@@ -50,13 +50,13 @@ export default function Nav() {
               className="w-10 h-10 object-contain shrink-0"
               priority
             />
-            <div className="hidden sm:block">
-              <p className={`font-display font-semibold text-sm leading-none transition-colors duration-500 ${
+            <div>
+              <p className={`font-display font-semibold text-sm leading-none ${
                 solid ? 'text-forest-700' : 'text-white'
               }`}>
                 Canning &amp; District
               </p>
-              <p className={`text-xs tracking-wide transition-colors duration-500 ${
+              <p className={`text-xs tracking-wide ${
                 solid ? 'text-stone-400' : 'text-white/65'
               }`}>
                 Recreational Commission
