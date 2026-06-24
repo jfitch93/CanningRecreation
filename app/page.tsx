@@ -74,7 +74,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-3 gap-8 pt-32 pb-12 items-center">
-          {/* Col 1 — text + CTAs (self-centres relative to the fixed-height cols beside it) */}
+          {/* Col 1 — text + CTAs */}
           <div>
             <p className="text-teal-200 font-sans font-medium tracking-[0.3em] uppercase text-xs mb-5">
               Canning &amp; District · Nova Scotia
@@ -89,13 +89,35 @@ export default function HomePage() {
             <p className="text-white/65 text-base leading-relaxed mb-8">
               Canning Recreation runs the rink, the programs, and the events that keep our community active all year long.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-8">
               <Link href="/programs" className="px-6 py-3 bg-teal hover:bg-teal-500 text-white font-semibold rounded-full text-sm transition-all hover:scale-105 shadow-lg">
                 Explore Programs
               </Link>
               <Link href="/events" className="px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-full text-sm border border-white/30 transition-all hover:scale-105">
                 What&apos;s On
               </Link>
+            </div>
+
+            {/* Mobile-only: Facebook follow + photo strip */}
+            <div className="lg:hidden space-y-5">
+              <a
+                href={FACEBOOK_PAGE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold rounded-full transition-colors text-sm shadow-sm"
+              >
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                </svg>
+                Follow us on Facebook
+              </a>
+              <div className="grid grid-cols-2 gap-2">
+                {GALLERY_PHOTOS.slice(0, 4).map((photo, i) => (
+                  <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
+                    <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="50vw" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
