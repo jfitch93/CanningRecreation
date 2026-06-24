@@ -43,14 +43,14 @@ const QUICK_CARDS = [
   },
 ]
 
-// Add more photos here as they come in from Jennie
+// Placeholder photos — swap these out when real photos arrive from Jennie
 const GALLERY_PHOTOS = [
-  { src: '/images/canning-valley.jpg',      alt: 'Autumn view over Canning, Nova Scotia' },
-  { src: '/images/canning-main-street.jpg', alt: 'Main street in Canning' },
-  { src: '/images/canning-valley.jpg',      alt: 'Canning countryside in fall' },
-  { src: '/images/canning-main-street.jpg', alt: 'Downtown Canning' },
-  { src: '/images/canning-valley.jpg',      alt: 'Nova Scotia landscape' },
-  { src: '/images/canning-main-street.jpg', alt: 'Canning village' },
+  { src: 'https://images.unsplash.com/photo-1515703407324-5f753afd8be8?w=600&h=400&fit=crop&q=80', alt: 'Hockey at Glooscap Arena' },
+  { src: 'https://images.unsplash.com/photo-1551958219-acbc595d5b58?w=600&h=400&fit=crop&q=80', alt: 'Youth sports program' },
+  { src: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=400&fit=crop&q=80', alt: 'Public skating at the arena' },
+  { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&q=80', alt: 'Community event' },
+  { src: 'https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=600&h=400&fit=crop&q=80', alt: 'Splash pad fun' },
+  { src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=400&fit=crop&q=80', alt: 'Outdoor recreation' },
 ]
 
 export default function HomePage() {
